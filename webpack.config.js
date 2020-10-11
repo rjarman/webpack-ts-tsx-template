@@ -44,8 +44,14 @@ const config = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpg|svg|jpeg)$/,
-        use: ['file-loader'],
+        test: /\.(png|jpg|svg|jpeg|woff2|woff|ttf)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[contenthash].[ext]',
+            outputPath: 'assets'
+          }
+        }],
       },
     ],
   },
@@ -54,12 +60,12 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['bundles/index'],
-      template: 'src/pages/template.html',
+      template: 'src/template.html',
     }),
     new HtmlWebpackPlugin({
       filename: 'post.html',
       chunks: ['bundles/index'],
-      template: 'src/pages/template.html',
+      template: 'src/template.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
