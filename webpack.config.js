@@ -4,13 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
+  // multi-page entry
   entry: {
-    'bundles/index': './src/pages/index/index.tsx',
-    '../server': './src/server.ts',
+    'bundles/index': './src/pages/index/index.tsx'
   },
   output: {
     filename: '[name].bundle.[contenthash].js',
-    path: path.resolve(__dirname, 'dist/public'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '',
   },
   resolve: {
