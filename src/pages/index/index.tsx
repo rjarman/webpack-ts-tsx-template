@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { ServerConnector } from '../../libs/ServerConnector';
 import './index.scss';
 
-class LikeButton extends React.Component {
+class Root extends React.Component {
   private serverConnector: ServerConnector;
   constructor(props: {} | Readonly<{}>) {
     super(props);
@@ -17,4 +17,4 @@ class LikeButton extends React.Component {
 }
 
 let domContainer = document.querySelector('#root');
-ReactDOM.render(<LikeButton />, domContainer);
+ReactDOM.render(<Root />, domContainer);
