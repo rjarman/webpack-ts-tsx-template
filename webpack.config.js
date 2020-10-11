@@ -19,7 +19,7 @@ const config = {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     index: 'index.html',
-    port: 9000,
+    port: 3000,
   },
   optimization: {
     splitChunks: {
