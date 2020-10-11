@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ServerConnector } from '../../libs/ServerConnector';
+import { Controller } from './controller';
 import './index.scss';
 
 class Root extends React.Component {
-  private serverConnector: ServerConnector;
+  private controller: Controller;
   constructor(props: {} | Readonly<{}>) {
     super(props);
-    this.serverConnector = new ServerConnector();
+    this.controller = new Controller();
   }
   render() {
     return (
