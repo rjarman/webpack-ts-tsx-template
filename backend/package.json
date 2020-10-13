@@ -1,0 +1,27 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "This is a sample backend template with webpack and typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon --watch dist --exec 'node dist/server.js'",
+    "dev": "webpack -w --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "keywords": [],
+  "author": "Rafsun Jany Arman",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.11.8",
+    "clean-webpack-plugin": "^3.0.0",
+    "colors": "^1.4.0",
+    "file-loader": "^6.1.1",
+    "nodemon": "^2.0.4",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {}
+}

@@ -1,16 +1,16 @@
 {
-  "name": "react_test",
+  "name": "example",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a sample frontend template with webpack and tsx",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js --mode production",
+    "dev-server": "webpack-dev-server",
     "dev": "webpack --config webpack.config.js --mode development",
-    "dev-server": "webpack-dev-server"
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rafsun Jany Arman",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.9.51",
