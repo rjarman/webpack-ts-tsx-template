@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -6,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = {
   // multi-page entry
   entry: {
-    'bundles/index': './src/pages/index/index.tsx'
+    'bundles/index': './src/pages/index/index.tsx',
   },
   output: {
     filename: '[name].bundle.[contenthash].js',
@@ -45,18 +46,26 @@ const config = {
       },
       {
         test: /\.(png|jpg|svg|jpeg|woff2|woff|ttf)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[contenthash].[ext]',
-            outputPath: 'assets'
-          }
-        }],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[contenthash].[ext]',
+              outputPath: 'assets',
+            },
+          },
+        ],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.HashedModuleIdsPlugin({
+      context: __dirname,
+      hashFunction: 'sha256',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['bundles/index'],
