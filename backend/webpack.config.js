@@ -1,5 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
   target: 'node',
@@ -7,7 +8,7 @@ const config = {
   output: {
     filename: 'server.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '',
+    publicPath: 'public',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -36,6 +37,11 @@ const config = {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'src/public', to: 'public' }],
+    }),
+  ],
 };
 module.exports = config;
