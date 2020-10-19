@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = {
   // multi-page entry
   entry: {
-    'bundles/index': './src/pages/index/index.tsx'
+    'bundles/index': './src/pages/index/index.tsx',
   },
   output: {
     filename: '[name].bundle.[contenthash].js',
@@ -45,13 +45,15 @@ const config = {
       },
       {
         test: /\.(png|jpg|svg|jpeg|woff2|woff|ttf)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[contenthash].[ext]',
-            outputPath: 'assets'
-          }
-        }],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[contenthash].[ext]',
+              outputPath: 'assets',
+            },
+          },
+        ],
       },
     ],
   },

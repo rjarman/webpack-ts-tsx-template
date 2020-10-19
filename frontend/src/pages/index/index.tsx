@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Controller } from './controller';
 import './index.scss';
 
@@ -10,9 +10,7 @@ class Root extends React.Component {
     this.controller = new Controller();
   }
   render() {
-    return (
-      <h1>Welcome to Index Page</h1>
-    );
+    return <h1>Welcome to Index Page</h1>;
   }
 }
 

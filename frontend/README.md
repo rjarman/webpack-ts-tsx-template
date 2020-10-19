@@ -1,21 +1,24 @@
 # webpack frontend tsx template
 
-* to **install** run:
-    ```
-    npm install
-    ```
+- to **install** run:
 
-* to run **webpack development server**
-    ```
-    npm run dev-server
-    ```
+  ```
+  npm install
+  ```
 
-* to build in **webpack development mode** run:
-    ```
-    npm run dev
-    ```
+- to run **webpack development server**
 
-* to build in **webpack production mode** run:
-    ```
-    npm run build
-    ```
+  ```
+  npm run dev-server
+  ```
+
+- to build in **webpack development mode** run:
+
+  ```
+  npm run dev
+  ```
+
+- to build in **webpack production mode** run:
+  ```
+  npm run build
+  ```
