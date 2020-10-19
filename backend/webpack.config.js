@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -39,6 +40,12 @@ const config = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.HashedModuleIdsPlugin({
+      context: __dirname,
+      hashFunction: 'sha256',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+    }),
     new CopyPlugin({
       patterns: [{ from: 'src/public', to: 'public' }],
     }),
